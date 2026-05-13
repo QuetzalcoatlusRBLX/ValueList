@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BTD Value List</title>
+<!-- ===== EMBED PREVIEW (DISCORD / SOCIAL MEDIA) ===== -->
+
+<meta property="og:title" content="BTD Value List">
+<meta property="og:description" content="Check out all unit values, partners, admins, and updates in BTD Value List!">
+<meta property="og:image" content="https://cdn.discordapp.com/attachments/1502605107248758865/1503965559530979378/Screenshot_20260513-114009.jpg?ex=6a054493&is=6a03f313&hm=b0d97d7d1ca87770d77ee55bcf3772da3869bdc8926a7ea30c63f0db62dcae7b&">
+<meta property="og:url" content="YOUR_WEBSITE_LINK_HERE">
+<meta property="og:type" content="website">
+
+<!-- Discord embed theme color -->
+<meta name="theme-color" content="#7b2cff">
+
+<style>
+
+/* ===== BASE ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#0f0f0f;
+    color:white;
+    padding:20px;
+}
+
+/* ===== PROFILE ===== */
+.profile-section{
+    display:flex;
+    justify-content:center;
+    margin-bottom:15px;
+}
+
+.profile-image{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #7b2cff;
+}
+
+/* ===== TITLE ===== */
+h1{
+    text-align:center;
+    margin-bottom:20px;
+    font-size:34px;
+}
+
+/* ===== FILTER ===== */
+.filter-box{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+select{
+    background:#1a1a1a;
+    color:white;
+    border:1px solid #333;
+    padding:10px;
+    border-radius:10px;
+}
+
+/* ===== VALUE LIST ===== */
+.value-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.value-item{
+    background:#1a1a1a;
+    border:1px solid #2a2a2a;
+    border-radius:14px;
+    padding:15px;
+}
+
+.item-name{
+    font-size:20px;
+    font-weight:bold;
+}
+
+.old{
+    color:#ff6666;
+    text-decoration:line-through;
+}
+
+.new{
+    color:#00ff99;
+    font-weight:bold;
+}
+
+.status{
+    margin-top:5px;
+    color:#ffcc66;
+}
+
+/* ===== RARITY ===== */
+.rarity{
+    display:inline-block;
+    margin-top:10px;
+    padding:6px 12px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.exclusive{background:linear-gradient(45deg,#7b2cff,#c084ff);}
+.astro{background:linear-gradient(45deg,#ff7a00,#ffb347);}
+.mythic{background:linear-gradient(45deg,#ff0000,#ff6b6b);}
+
+/* ===== ROLES ===== */
+.role-badge{
+    display:inline-block;
+    margin-top:10px;
+    padding:6px 12px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.partner{background:linear-gradient(45deg,#ff0000,#ff5e5e);}
+.admin{background:linear-gradient(45deg,#ff0000,#ff5e5e);}
+.developer{background:linear-gradient(45deg,#00c853,#69f0ae);}
+.owner{background:linear-gradient(45deg,#ffb300,#ffe082); color:black;}
+
+/* ===== YOUTUBE ===== */
+.youtube-link{
+    display:inline-block;
+    margin-top:8px;
+    color:#ff4d4d;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* ===== CONTAINER ===== */
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:12px;
+}
+
+/* ===== CARD ===== */
+.user-card{
+    background:#1a1a1a;
+    border:1px solid #2a2a2a;
+    border-radius:14px;
+    padding:15px;
+}
+
+/* ===== TEXT ===== */
+.username{
+    font-weight:bold;
+    font-size:16px;
+}
+
+.sign-value{
+    margin-top:6px;
+    color:#00ff99;
+    font-weight:bold;
+}
+
+/* ===== NOTE ===== */
+.note{
+    margin-top:20px;
+    text-align:center;
+    color:#777;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PROFILE -->
+<div class="profile-section">
+    <img class="profile-image" src="https://cdn.discordapp.com/attachments/1502605107248758865/1503965559530979378/Screenshot_20260513-114009.jpg?ex=6a054493&is=6a03f313&hm=b0d97d7d1ca87770d77ee55bcf3772da3869bdc8926a7ea30c63f0db62dcae7b&">
+</div>
+
+<h1>📊 BTD Value List</h1>
+
+<!-- FILTER -->
+<div class="filter-box">
+    <label>Sort:</label>
+    <select id="sortSelect">
+        <option value="default">Default</option>
+        <option value="high">Highest → Lowest</option>
+        <option value="low">Lowest → Highest</option>
+    </select>
+</div>
+
+<!-- VALUE LIST -->
+<div class="value-list" id="valueList">
+
+<div class="value-item" data-value="750">
+<div class="item-name">Titan Cameraguy</div>
+<span class="old">800</span> → <span class="new">750</span><br>
+<span class="rarity exclusive">Exclusive</span>
+</div>
+
+<div class="value-item" data-value="500">
+<div class="item-name">Tv Girl</div>
+<span class="old">450</span> → <span class="new">500</span><br>
+<span class="rarity exclusive">Exclusive</span>
+</div>
+
+<div class="value-item" data-value="47000">
+<div class="item-name">Engineer Cameraman</div>
+<span class="old">45,000</span> → <span class="new">47,000</span><br>
+<span class="rarity exclusive">Exclusive</span>
+</div>
+
+<div class="value-item" data-value="63000">
+<div class="item-name">Spider TV</div>
+<span class="old">62,000</span> → <span class="new">63,000</span><br>
+<span class="rarity exclusive">Exclusive</span>
+</div>
+
+<div class="value-item" data-value="1250">
+<div class="item-name">Green Laser</div>
+<span class="old">1,300</span> → <span class="new">1,250</span><br>
+<span class="rarity exclusive">Exclusive</span>
+</div>
+
+<div class="value-item" data-value="950">
+<div class="item-name">Jetpack Cameraman</div>
+<span class="old">1,000</span> → <span class="new">950</span><br>
+<span class="rarity exclusive">Exclusive</span>
+</div>
+
+<div class="value-item" data-value="650">
+<div class="item-name">Scientist Cameraman</div>
+<span class="old">700</span> → <span class="new">650</span><br>
+<span class="rarity exclusive">Exclusive</span>
+</div>
+
+<div class="value-item" data-value="100">
+<div class="item-name">Speaker Spider</div>
+<span class="old">125</span> → <span class="new">100</span><br>
+<span class="rarity exclusive">Exclusive</span>
+</div>
+
+<div class="value-item" data-value="150">
+<div class="item-name">Spider Camera</div>
+<span class="old">175</span> → <span class="new">150</span><br>
+<span class="rarity exclusive">Exclusive</span>
+</div>
+
+<div class="value-item" data-value="97000">
+<div class="item-name">Futuristic Titan Cameraguy</div>
+<span class="old">98,000</span> → <span class="new">97,000</span><br>
+<span class="rarity astro">Astro</span>
+</div>
+
+<div class="value-item" data-value="20000">
+<div class="item-name">Astro Camera Guy</div>
+<span class="old">19,000</span> → <span class="new">20,000</span><br>
+<span class="rarity astro">Astro</span>
+</div>
+
+<div class="value-item" data-value="2000">
+<div class="item-name">Upgraded Titan Speakerguy</div>
+<span class="old">2,100</span> → <span class="new">2,000</span><br>
+<span class="rarity mythic">Mythic</span>
+</div>
+
+<div class="value-item" data-value="750">
+<div class="item-name">Titan Cinemaguy</div>
+<span class="old">800</span> → <span class="new">750</span><br>
+<span class="rarity mythic">Mythic</span>
+</div>
+
+<div class="value-item" data-value="1000">
+<div class="item-name">Upgraded Titan Cameraguy</div>
+<span class="old">1,250</span> → <span class="new">1,000</span><br>
+<span class="rarity mythic">Mythic</span>
+</div>
+
+</div>
+
+<!-- PARTNERS -->
+<h2 style="margin-top:30px;">📊 Partners</h2>
+
+<div class="container">
+
+<div class="user-card">
+<div class="username">CAMERAMAN_EDI (@FAN12_YTT8)</div>
+<div class="sign-value">+15%</div>
+<a class="youtube-link" href="https://youtube.com/@FAN12_YTT8" target="_blank">YouTube</a>
+<div class="role-badge partner">Partner</div>
+</div>
+
+<div class="user-card">
+<div class="username">Angelplays5685</div>
+<div class="sign-value">+12%</div>
+<a class="youtube-link" href="https://youtube.com/@Angelplays5685" target="_blank">YouTube</a>
+<div class="role-badge partner">Partner</div>
+</div>
+
+<div class="user-card">
+<div class="username">Won</div>
+<div class="sign-value">+10%</div>
+<a class="youtube-link" href="https://youtube.com/" target="_blank">YouTube</a>
+<div class="role-badge partner">Partner</div>
+</div>
+
+<div class="user-card">
+<div class="username">MarkGamer</div>
+<div class="sign-value">+10%</div>
+<a class="youtube-link" href="https://youtube.com/" target="_blank">YouTube</a>
+<div class="role-badge partner">Partner</div>
+</div>
+
+<div class="user-card">
+<div class="username">imrunningrun</div>
+<div class="sign-value">+15%</div>
+<a class="youtube-link" href="https://youtube.com/@imrunningrun" target="_blank">YouTube</a>
+<div class="role-badge partner">Partner</div>
+</div>
+
+<div class="user-card">
+<div class="username">n4bimzz</div>
+<div class="sign-value">+10%</div>
+<a class="youtube-link" href="https://youtube.com/" target="_blank">YouTube</a>
+<div class="role-badge partner">Partner</div>
+</div>
+
+<div class="user-card">
+<div class="username">ShikarikumiTD</div>
+<div class="sign-value">+20%</div>
+<a class="youtube-link" href="https://youtube.com/@ShikarikumiTD" target="_blank">YouTube</a>
+<div class="role-badge partner">Partner</div>
+</div>
+
+<div class="user-card">
+<div class="username">TheoBplays</div>
+<div class="sign-value">+10%</div>
+<a class="youtube-link" href="https://youtube.com/@TheoBplays" target="_blank">YouTube</a>
+<div class="role-badge partner">Partner</div>
+</div>
+
+<div class="user-card">
+<div class="username">disnine4</div>
+<div class="sign-value">+15%</div>
+<a class="youtube-link" href="https://youtube.com/@disnine4" target="_blank">YouTube</a>
+<div class="role-badge partner">Partner</div>
+</div>
+
+</div>
+
+<!-- ADMINS -->
+<h2 style="margin-top:30px;">📊 Admins / Owners</h2>
+
+<div class="container">
+
+<div class="user-card">
+<div class="username">cat_maneater</div>
+<div class="sign-value">+30%</div>
+<a class="youtube-link" href="#">YouTube</a>
+<div class="role-badge developer">Developer</div>
+</div>
+
+<div class="user-card">
+<div class="username">mogg963yt</div>
+<div class="sign-value">+35%</div>
+<a class="youtube-link" href="https://youtube.com/@mogg963" target="_blank">YouTube</a>
+<div class="role-badge developer">Developer</div>
+</div>
+
+<div class="user-card">
+<div class="username">Quetzalcoatlus</div>
+<div class="sign-value">+40%</div>
+<a class="youtube-link" href="#">YouTube</a>
+<div class="role-badge admin">Admin</div>
+</div>
+
+<div class="user-card">
+<div class="username">BuDz</div>
+<div class="sign-value">60%</div>
+<a class="youtube-link" href="#">YouTube</a>
+<div class="role-badge admin">Admin</div>
+</div>
+
+<div class="user-card">
+<div class="username">minaks9</div>
+<div class="sign-value">+35%</div>
+<a class="youtube-link" href="#">YouTube</a>
+<div class="role-badge admin">Admin</div>
+</div>
+
+<div class="user-card">
+<div class="username">niahuser (Owner)</div>
+<div class="sign-value">+100%</div>
+<a class="youtube-link" href="#">YouTube</a>
+<div class="role-badge owner">Owner</div>
+</div>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+
+const valueList = document.getElementById("valueList");
+const sortSelect = document.getElementById("sortSelect");
+
+const defaultOrder = [...document.querySelectorAll(".value-item")];
+
+sortSelect.addEventListener("change", () => {
+
+let items = [...document.querySelectorAll(".value-item")];
+
+if(sortSelect.value === "high"){
+items.sort((a,b)=>b.dataset.value-a.dataset.value);
+}
+else if(sortSelect.value === "low"){
+items.sort((a,b)=>a.dataset.value-b.dataset.value);
+}
+else{
+items = defaultOrder;
+}
+
+valueList.innerHTML = "";
+items.forEach(i=>valueList.appendChild(i));
+
+});
+
+</script>
+
+</body>
+</html>
