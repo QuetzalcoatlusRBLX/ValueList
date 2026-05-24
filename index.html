@@ -3,434 +3,564 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BTD Value List</title>
+<title>Forgotten TTD Value List</title>
 <!-- ===== EMBED PREVIEW (DISCORD / SOCIAL MEDIA) ===== -->
 
-<meta property="og:title" content="BTD Value List">
-<meta property="og:description" content="Check out all unit values, partners, admins, and updates in BTD Value List!">
+<meta property="og:title" content="Forgotten TTD Value List">
+<meta property="og:description" content="Check out all unit values, partners, admins, and updates in Forgotten TTD Value List!">
 <meta property="og:image" content="https://cdn.discordapp.com/attachments/1502605107248758865/1503965559530979378/Screenshot_20260513-114009.jpg?ex=6a054493&is=6a03f313&hm=b0d97d7d1ca87770d77ee55bcf3772da3869bdc8926a7ea30c63f0db62dcae7b&">
 <meta property="og:url" content="https://quetzalcoatlusrblx.github.io/ValueList/">
 <meta property="og:type" content="website">
 
-<!-- Discord embed theme color -->
-<meta name="theme-color" content="#7b2cff">
+  <title>TTD Trade Calculator</title>
 
-<style>
-
-/* ===== BASE ===== */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
-
-body{
-    background:#0f0f0f;
-    color:white;
-    padding:20px;
-}
-
-/* ===== PROFILE ===== */
-.profile-section{
-    display:flex;
-    justify-content:center;
-    margin-bottom:15px;
-}
-
-.profile-image{
-    width:110px;
-    height:110px;
-    border-radius:50%;
-    object-fit:cover;
-    border:3px solid #7b2cff;
-}
-
-/* ===== TITLE ===== */
-h1{
-    text-align:center;
-    margin-bottom:20px;
-    font-size:34px;
-}
-
-/* ===== FILTER ===== */
-.filter-box{
-    display:flex;
-    gap:10px;
-    align-items:center;
-    margin-bottom:20px;
-}
-
-select{
-    background:#1a1a1a;
-    color:white;
-    border:1px solid #333;
-    padding:10px;
-    border-radius:10px;
-}
-
-/* ===== VALUE LIST ===== */
-.value-list{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-}
-
-.value-item{
-    background:#1a1a1a;
-    border:1px solid #2a2a2a;
-    border-radius:14px;
-    padding:15px;
-}
-
-.item-name{
-    font-size:20px;
-    font-weight:bold;
-}
-
-.old{
-    color:#ff6666;
-    text-decoration:line-through;
-}
-
-.new{
-    color:#00ff99;
-    font-weight:bold;
-}
-
-.status{
-    margin-top:5px;
-    color:#ffcc66;
-}
-
-/* ===== RARITY ===== */
-.rarity{
-    display:inline-block;
-    margin-top:10px;
-    padding:6px 12px;
-    border-radius:999px;
-    font-size:12px;
-    font-weight:bold;
-}
-
-.exclusive{background:linear-gradient(45deg,#7b2cff,#c084ff);}
-.astro{background:linear-gradient(45deg,#ff7a00,#ffb347);}
-.mythic{background:linear-gradient(45deg,#ff0000,#ff6b6b);}
-
-/* ===== ROLES ===== */
-.role-badge{
-    display:inline-block;
-    margin-top:10px;
-    padding:6px 12px;
-    border-radius:999px;
-    font-size:12px;
-    font-weight:bold;
-}
-
-.partner{background:linear-gradient(45deg,#ff0000,#ff5e5e);}
-.admin{background:linear-gradient(45deg,#ff0000,#ff5e5e);}
-.developer{background:linear-gradient(45deg,#00c853,#69f0ae);}
-.owner{background:linear-gradient(45deg,#ffb300,#ffe082); color:black;}
-
-/* ===== YOUTUBE ===== */
-.youtube-link{
-    display:inline-block;
-    margin-top:8px;
-    color:#ff4d4d;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-/* ===== CONTAINER ===== */
-.container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:12px;
-}
-
-/* ===== CARD ===== */
-.user-card{
-    background:#1a1a1a;
-    border:1px solid #2a2a2a;
-    border-radius:14px;
-    padding:15px;
-}
-
-/* ===== TEXT ===== */
-.username{
-    font-weight:bold;
-    font-size:16px;
-}
-
-.sign-value{
-    margin-top:6px;
-    color:#00ff99;
-    font-weight:bold;
-}
-
-/* ===== NOTE ===== */
-.note{
-    margin-top:20px;
-    text-align:center;
-    color:#777;
-}
-
-</style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="bg-slate-950 text-white min-h-screen p-6">
 
-<!-- PROFILE -->
-<div class="profile-section">
-    <img class="profile-image" src="https://cdn.discordapp.com/attachments/1502605107248758865/1503965559530979378/Screenshot_20260513-114009.jpg?ex=6a054493&is=6a03f313&hm=b0d97d7d1ca87770d77ee55bcf3772da3869bdc8926a7ea30c63f0db62dcae7b&">
-</div>
+<div class="max-w-7xl mx-auto">
 
-<h1>📊 BTD Value List</h1>
+  <h1 class="text-5xl font-black text-center text-cyan-400 mb-2">
+    TTD VALUE LIST
+  </h1>
 
-<!-- FILTER -->
-<div class="filter-box">
-    <label>Sort:</label>
-    <select id="sortSelect">
-        <option value="default">Default</option>
-        <option value="high">Highest → Lowest</option>
-        <option value="low">Lowest → Highest</option>
-    </select>
-</div>
+  <p class="text-center text-slate-400 mb-8">
+    Add units to compare trades
+  </p>
 
-<!-- VALUE LIST -->
-<div class="value-list" id="valueList">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-<div class="value-item" data-value="750">
-<div class="item-name">Titan Cameraguy</div>
-<span class="old">800</span> → <span class="new">750</span><br>
-<span class="rarity exclusive">Exclusive</span>
-</div>
+    <!-- VALUE LIST -->
+    <div class="bg-slate-900 rounded-3xl p-5 border border-slate-700">
 
-<div class="value-item" data-value="500">
-<div class="item-name">Tv Girl</div>
-<span class="old">450</span> → <span class="new">500</span><br>
-<span class="rarity exclusive">Exclusive</span>
-</div>
+      <div class="flex justify-between items-center mb-4">
 
-<div class="value-item" data-value="47000">
-<div class="item-name">Engineer Cameraman</div>
-<span class="old">45,000</span> → <span class="new">47,000</span><br>
-<span class="rarity exclusive">Exclusive</span>
-</div>
+        <h2 class="text-2xl font-bold text-yellow-400">
+          Value List
+        </h2>
 
-<div class="value-item" data-value="63000">
-<div class="item-name">Spider TV</div>
-<span class="old">62,000</span> → <span class="new">63,000</span><br>
-<span class="rarity exclusive">Exclusive</span>
-</div>
+        <input
+          id="searchValue"
+          type="text"
+          placeholder="Search..."
+          class="bg-slate-800 border border-slate-700 rounded-xl px-4 py-2 outline-none"
+        >
 
-<div class="value-item" data-value="1250">
-<div class="item-name">Green Laser</div>
-<span class="old">1,300</span> → <span class="new">1,250</span><br>
-<span class="rarity exclusive">Exclusive</span>
-</div>
+      </div>
 
-<div class="value-item" data-value="950">
-<div class="item-name">Jetpack Cameraman</div>
-<span class="old">1,000</span> → <span class="new">950</span><br>
-<span class="rarity exclusive">Exclusive</span>
-</div>
+      <div
+        id="valueList"
+        class="space-y-3 max-h-[700px] overflow-y-auto"
+      ></div>
 
-<div class="value-item" data-value="650">
-<div class="item-name">Scientist Cameraman</div>
-<span class="old">700</span> → <span class="new">650</span><br>
-<span class="rarity exclusive">Exclusive</span>
-</div>
+    </div>
 
-<div class="value-item" data-value="100">
-<div class="item-name">Speaker Spider</div>
-<span class="old">125</span> → <span class="new">100</span><br>
-<span class="rarity exclusive">Exclusive</span>
-</div>
+    <!-- TRADE CALCULATOR -->
+    <div class="bg-slate-900 rounded-3xl p-5 border border-slate-700">
 
-<div class="value-item" data-value="150">
-<div class="item-name">Spider Camera</div>
-<span class="old">175</span> → <span class="new">150</span><br>
-<span class="rarity exclusive">Exclusive</span>
-</div>
+      <div class="flex justify-between items-center mb-4">
 
-<div class="value-item" data-value="97000">
-<div class="item-name">Futuristic Titan Cameraguy</div>
-<span class="old">98,000</span> → <span class="new">97,000</span><br>
-<span class="rarity astro">Astro</span>
-</div>
+        <h2 class="text-2xl font-bold">
+          Trade Calculator
+        </h2>
 
-<div class="value-item" data-value="20000">
-<div class="item-name">Astro Camera Guy</div>
-<span class="old">19,000</span> → <span class="new">20,000</span><br>
-<span class="rarity astro">Astro</span>
-</div>
+        <button
+          onclick="clearTrades()"
+          class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-xl font-bold transition"
+        >
+          Clear
+        </button>
 
-<div class="value-item" data-value="2000">
-<div class="item-name">Upgraded Titan Speakerguy</div>
-<span class="old">2,100</span> → <span class="new">2,000</span><br>
-<span class="rarity mythic">Mythic</span>
-</div>
+      </div>
 
-<div class="value-item" data-value="750">
-<div class="item-name">Titan Cinemaguy</div>
-<span class="old">800</span> → <span class="new">750</span><br>
-<span class="rarity mythic">Mythic</span>
-</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-<div class="value-item" data-value="1000">
-<div class="item-name">Upgraded Titan Cameraguy</div>
-<span class="old">1,250</span> → <span class="new">1,000</span><br>
-<span class="rarity mythic">Mythic</span>
-</div>
+        <!-- YOUR TRADE -->
+        <div class="bg-slate-800 rounded-2xl p-4 border border-cyan-500">
 
-</div>
+          <div class="flex justify-between items-center mb-4">
 
-<!-- PARTNERS -->
-<h2 style="margin-top:30px;">📊 Partners</h2>
+            <h3 class="text-xl font-bold text-cyan-300">
+              Your Trade
+            </h3>
 
-<div class="container">
+            <button
+              onclick="addUnit('mine')"
+              class="bg-cyan-500 hover:bg-cyan-600 px-3 py-2 rounded-xl font-bold transition"
+            >
+              + Add
+            </button>
 
-<div class="user-card">
-<div class="username">CAMERAMAN_EDI (@FAN12_YTT8)</div>
-<div class="sign-value">+15%</div>
-<a class="youtube-link" href="https://youtube.com/@FAN12_YTT8" target="_blank">YouTube</a>
-<div class="role-badge partner">Partner</div>
-</div>
+          </div>
 
-<div class="user-card">
-<div class="username">Angelplays5685</div>
-<div class="sign-value">+12%</div>
-<a class="youtube-link" href="https://youtube.com/@Angelplays5685" target="_blank">YouTube</a>
-<div class="role-badge partner">Partner</div>
-</div>
+          <div
+            id="myTrade"
+            class="space-y-2 min-h-[300px]"
+          ></div>
 
-<div class="user-card">
-<div class="username">Won</div>
-<div class="sign-value">+10%</div>
-<a class="youtube-link" href="https://youtube.com/" target="_blank">YouTube</a>
-<div class="role-badge partner">Partner</div>
-</div>
+          <div class="mt-4 text-lg font-bold text-cyan-400">
+            Total:
+            <span id="myTotal">0</span>
+          </div>
 
-<div class="user-card">
-<div class="username">MarkGamer</div>
-<div class="sign-value">+10%</div>
-<a class="youtube-link" href="https://youtube.com/" target="_blank">YouTube</a>
-<div class="role-badge partner">Partner</div>
-</div>
+        </div>
 
-<div class="user-card">
-<div class="username">imrunningrun</div>
-<div class="sign-value">+15%</div>
-<a class="youtube-link" href="https://youtube.com/@imrunningrun" target="_blank">YouTube</a>
-<div class="role-badge partner">Partner</div>
-</div>
+        <!-- THEIR TRADE -->
+        <div class="bg-slate-800 rounded-2xl p-4 border border-pink-500">
 
-<div class="user-card">
-<div class="username">n4bimzz</div>
-<div class="sign-value">+10%</div>
-<a class="youtube-link" href="https://youtube.com/" target="_blank">YouTube</a>
-<div class="role-badge partner">Partner</div>
-</div>
+          <div class="flex justify-between items-center mb-4">
 
-<div class="user-card">
-<div class="username">ShikarikumiTD</div>
-<div class="sign-value">+20%</div>
-<a class="youtube-link" href="https://youtube.com/@ShikarikumiTD" target="_blank">YouTube</a>
-<div class="role-badge partner">Partner</div>
-</div>
+            <h3 class="text-xl font-bold text-pink-300">
+              Their Trade
+            </h3>
 
-<div class="user-card">
-<div class="username">TheoBplays</div>
-<div class="sign-value">+10%</div>
-<a class="youtube-link" href="https://youtube.com/@TheoBplays" target="_blank">YouTube</a>
-<div class="role-badge partner">Partner</div>
-</div>
+            <button
+              onclick="addUnit('theirs')"
+              class="bg-pink-500 hover:bg-pink-600 px-3 py-2 rounded-xl font-bold transition"
+            >
+              + Add
+            </button>
 
-<div class="user-card">
-<div class="username">disnine4</div>
-<div class="sign-value">+15%</div>
-<a class="youtube-link" href="https://youtube.com/@disnine4" target="_blank">YouTube</a>
-<div class="role-badge partner">Partner</div>
-</div>
+          </div>
+
+          <div
+            id="theirTrade"
+            class="space-y-2 min-h-[300px]"
+          ></div>
+
+          <div class="mt-4 text-lg font-bold text-pink-400">
+            Total:
+            <span id="theirTotal">0</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RESULT -->
+      <div
+        id="result"
+        class="mt-6 text-center text-3xl font-black text-yellow-400"
+      >
+        FAIR TRADE
+      </div>
+
+      <div
+        id="difference"
+        class="text-center text-slate-300 mt-2 text-lg"
+      >
+        Difference: 0
+      </div>
+
+    </div>
+
+  </div>
 
 </div>
 
-<!-- ADMINS -->
-<h2 style="margin-top:30px;">📊 Admins / Owners</h2>
-
-<div class="container">
-
-<div class="user-card">
-<div class="username">cat_maneater</div>
-<div class="sign-value">+30%</div>
-<a class="youtube-link" href="#">YouTube</a>
-<div class="role-badge developer">Developer</div>
-</div>
-
-<div class="user-card">
-<div class="username">mogg963yt</div>
-<div class="sign-value">+35%</div>
-<a class="youtube-link" href="https://youtube.com/@mogg963" target="_blank">YouTube</a>
-<div class="role-badge developer">Developer</div>
-</div>
-
-<div class="user-card">
-<div class="username">Quetzalcoatlus</div>
-<div class="sign-value">+40%</div>
-<a class="youtube-link" href="#">YouTube</a>
-<div class="role-badge admin">Admin</div>
-</div>
-
-<div class="user-card">
-<div class="username">BuDz</div>
-<div class="sign-value">60%</div>
-<a class="youtube-link" href="#">YouTube</a>
-<div class="role-badge admin">Admin</div>
-</div>
-
-<div class="user-card">
-<div class="username">minaks9</div>
-<div class="sign-value">+35%</div>
-<a class="youtube-link" href="#">YouTube</a>
-<div class="role-badge admin">Admin</div>
-</div>
-
-<div class="user-card">
-<div class="username">niahuser (Owner)</div>
-<div class="sign-value">+100%</div>
-<a class="youtube-link" href="#">YouTube</a>
-<div class="role-badge owner">Owner</div>
-</div>
-
-</div>
-
-<!-- SCRIPT -->
 <script>
 
-const valueList = document.getElementById("valueList");
-const sortSelect = document.getElementById("sortSelect");
+const units = [
 
-const defaultOrder = [...document.querySelectorAll(".value-item")];
+  {
+    name: "Titan Cameraguy",
+    value: 500,
+    status: "Unstable"
+  },
 
-sortSelect.addEventListener("change", () => {
+  {
+    name: "TV Girl",
+    value: 450,
+    status: "Unstable"
+  },
 
-let items = [...document.querySelectorAll(".value-item")];
+  {
+    name: "Engineer Cameraman",
+    value: 4000,
+    status: "Stable"
+  },
 
-if(sortSelect.value === "high"){
-items.sort((a,b)=>b.dataset.value-a.dataset.value);
+  {
+    name: "Jetpack Cameraguy",
+    value: 500,
+    status: "Unstable"
+  },
+
+  {
+    name: "Scientist Cameraman",
+    value: 1000,
+    status: "Unstable"
+  },
+
+  {
+    name: "Titan Speakerman",
+    value: 3200,
+    status: "Stable"
+  },
+
+  {
+    name: "DJ TV Man",
+    value: 2500,
+    status: "Stable"
+  }
+
+];
+
+let myTrade = [];
+let theirTrade = [];
+
+const valueList =
+  document.getElementById("valueList");
+
+function renderValueList(filter = "") {
+
+  valueList.innerHTML = "";
+
+  units
+    .filter(unit =>
+      unit.name
+        .toLowerCase()
+        .includes(filter.toLowerCase())
+    )
+    .forEach(unit => {
+
+      const div =
+        document.createElement("div");
+
+      div.className =
+        "bg-slate-800 rounded-2xl p-4 border border-slate-700";
+
+      div.innerHTML = `
+        <div class="flex justify-between items-center">
+
+          <div>
+
+            <div class="text-xl font-bold text-cyan-300">
+              ${unit.name}
+            </div>
+
+            <div class="text-slate-300">
+              Value:
+              ${unit.value.toLocaleString()}
+            </div>
+
+          </div>
+
+          <div class="${
+            unit.status === "Stable"
+            ? "bg-green-500 text-black"
+            : "bg-red-500 text-white"
+          } px-3 py-1 rounded-full text-sm font-bold">
+
+            ${unit.status}
+
+          </div>
+
+        </div>
+      `;
+
+      valueList.appendChild(div);
+
+    });
+
 }
-else if(sortSelect.value === "low"){
-items.sort((a,b)=>a.dataset.value-b.dataset.value);
-}
-else{
-items = defaultOrder;
+
+renderValueList();
+
+document
+  .getElementById("searchValue")
+  .addEventListener("input", (e) => {
+    renderValueList(e.target.value);
+  });
+
+function addUnit(side) {
+
+  // MENU
+  const menu =
+    document.createElement("div");
+
+  menu.className =
+    "fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4";
+
+  menu.innerHTML = `
+    <div class="bg-slate-900 w-full max-w-md rounded-3xl p-5 border border-slate-700">
+
+      <div class="flex justify-between items-center mb-4">
+
+        <h2 class="text-2xl font-bold text-cyan-400">
+          Choose Unit
+        </h2>
+
+        <button
+          id="closeMenu"
+          class="bg-red-500 hover:bg-red-600 px-3 py-1 rounded-lg font-bold"
+        >
+          X
+        </button>
+
+      </div>
+
+      <input
+        id="unitSearch"
+        type="text"
+        placeholder="Search unit..."
+        class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 outline-none mb-4"
+      >
+
+      <div
+        id="unitMenuList"
+        class="space-y-3 max-h-[500px] overflow-y-auto"
+      ></div>
+
+    </div>
+  `;
+
+  document.body.appendChild(menu);
+
+  const list =
+    menu.querySelector("#unitMenuList");
+
+  const search =
+    menu.querySelector("#unitSearch");
+
+  function renderMenu(filter = "") {
+
+    list.innerHTML = "";
+
+    units
+      .filter(unit =>
+        unit.name
+          .toLowerCase()
+          .includes(filter.toLowerCase())
+      )
+      .forEach(unit => {
+
+        const div =
+          document.createElement("div");
+
+        div.className =
+          "bg-slate-800 hover:bg-slate-700 rounded-2xl p-4 border border-slate-700 cursor-pointer transition";
+
+        div.innerHTML = `
+          <div class="flex justify-between items-center">
+
+            <div>
+
+              <div class="font-bold text-cyan-300 text-lg">
+                ${unit.name}
+              </div>
+
+              <div class="text-slate-300">
+                ${unit.value.toLocaleString()} Value
+              </div>
+
+            </div>
+
+            <div class="${
+              unit.status === "Stable"
+              ? "bg-green-500 text-black"
+              : "bg-red-500 text-white"
+            } px-3 py-1 rounded-full text-sm font-bold">
+
+              ${unit.status}
+
+            </div>
+
+          </div>
+        `;
+
+        div.addEventListener("click", () => {
+
+          if (side === "mine") {
+            myTrade.push(unit);
+          }
+          else {
+            theirTrade.push(unit);
+          }
+
+          renderTrades();
+
+          menu.remove();
+
+        });
+
+        list.appendChild(div);
+
+      });
+
+  }
+
+  renderMenu();
+
+  search.addEventListener("input", (e) => {
+    renderMenu(e.target.value);
+  });
+
+  menu.querySelector("#closeMenu")
+    .addEventListener("click", () => {
+      menu.remove();
+    });
+
 }
 
-valueList.innerHTML = "";
-items.forEach(i=>valueList.appendChild(i));
+function renderTrades() {
 
-});
+  renderTradeSide(
+    "myTrade",
+    myTrade,
+    "myTotal"
+  );
+
+  renderTradeSide(
+    "theirTrade",
+    theirTrade,
+    "theirTotal"
+  );
+
+  updateResult();
+
+}
+
+function renderTradeSide(
+  containerId,
+  list,
+  totalId
+) {
+
+  const container =
+    document.getElementById(containerId);
+
+  container.innerHTML = "";
+
+  list.forEach((item, index) => {
+
+    const div =
+      document.createElement("div");
+
+    div.className =
+      "bg-slate-700 rounded-xl p-3 flex justify-between items-center";
+
+    div.innerHTML = `
+      <div>
+
+        <div class="font-bold">
+          ${item.name}
+        </div>
+
+        <div class="text-sm text-slate-300">
+          ${item.value.toLocaleString()} Value
+        </div>
+
+      </div>
+
+      <button
+        onclick="removeUnit('${containerId}', ${index})"
+        class="bg-red-500 hover:bg-red-600 px-3 py-1 rounded-lg font-bold"
+      >
+        X
+      </button>
+    `;
+
+    container.appendChild(div);
+
+  });
+
+  const total =
+    list.reduce(
+      (sum, item) =>
+      sum + item.value,
+      0
+    );
+
+  document.getElementById(totalId)
+    .textContent =
+    total.toLocaleString();
+
+}
+
+function removeUnit(side, index) {
+
+  if (side === "myTrade") {
+    myTrade.splice(index, 1);
+  }
+  else {
+    theirTrade.splice(index, 1);
+  }
+
+  renderTrades();
+
+}
+
+function clearTrades() {
+
+  myTrade = [];
+  theirTrade = [];
+
+  renderTrades();
+
+}
+
+function updateResult() {
+
+  const myTotal =
+    myTrade.reduce(
+      (sum, item) =>
+      sum + item.value,
+      0
+    );
+
+  const theirTotal =
+    theirTrade.reduce(
+      (sum, item) =>
+      sum + item.value,
+      0
+    );
+
+  const diff =
+    Math.abs(
+      myTotal - theirTotal
+    );
+
+  const result =
+    document.getElementById("result");
+
+  const difference =
+    document.getElementById("difference");
+
+  difference.textContent =
+    "Difference: " +
+    diff.toLocaleString();
+
+  if (myTotal > theirTotal) {
+
+    result.textContent =
+      "YOU ARE OVERPAYING";
+
+    result.className =
+      "mt-6 text-center text-3xl font-black text-red-400";
+
+  }
+  else if (myTotal < theirTotal) {
+
+    result.textContent =
+      "WIN FOR YOU";
+
+    result.className =
+      "mt-6 text-center text-3xl font-black text-green-400";
+
+  }
+  else {
+
+    result.textContent =
+      "FAIR TRADE";
+
+    result.className =
+      "mt-6 text-center text-3xl font-black text-yellow-400";
+
+  }
+
+}
 
 </script>
 
